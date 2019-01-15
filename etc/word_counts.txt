@@ -9,7 +9,6 @@ in 182598
 with 152984
 and 139109
 is 97322
-hamster 93679
 person 72712
 to 67506
 sitting 52259
