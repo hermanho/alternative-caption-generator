@@ -7,10 +7,9 @@ of 202290
 the 196219
 in 182598
 with 152984
-man 150150
-woman 150150
 and 139109
 is 97322
+woman 72712
 to 67506
 sitting 52259
 an 49463
@@ -22,6 +21,7 @@ people 41672
 are 40768
 next 36794
 white 35874
+man 33849
 street 30173
 table 29681
 that 27969
