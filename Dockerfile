@@ -12,5 +12,14 @@ RUN apt-get install -y \
 ADD $PWD/requirements.txt /requirements.txt
 RUN pip3 install -r /requirements.txt
 
-CMD ["/bin/bash"]
+ADD $PWD/etc /app/etc
+ADD $PWD/medium_show_and_tell_caption_generator /app/medium_show_and_tell_caption_generator
+ENV PYTHONPATH "${PYTHONPATH}:/app"
+
+EXPOSE 5000
+# testing
+# CMD ["/bin/bash"]
+
+#production
+CMD ["python3", "./app/medium_show_and_tell_caption_generator/httpapp.py"]
 
