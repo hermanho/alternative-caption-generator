@@ -48,14 +48,15 @@ def main_index():
             file = request.files['file']
     else:
         url = request.args.get('url')
-        url = urllib.parse.quote(url, safe=string.printable)
-        logger.info('url: %s', url)
-        with tempfile.NamedTemporaryFile(delete=True) as img_file:
-            req = urllib.request.urlopen(url)
-            img_file.write(req.read())
-            img_file.flush()
-            with tf.gfile.GFile(img_file.name, "rb") as f:
-                file = f.read()
+        if url:
+            url = urllib.parse.quote(url, safe=string.printable)
+            logger.info('url: %s', url)
+            with tempfile.NamedTemporaryFile(delete=True) as img_file:
+                req = urllib.request.urlopen(url)
+                img_file.write(req.read())
+                img_file.flush()
+                with tf.gfile.GFile(img_file.name, "rb") as f:
+                    file = f.read()
     if file:
         captions = generator.beam_search(file)
         results = []

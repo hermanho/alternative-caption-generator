@@ -1,3 +1,5 @@
 tensorflow
+pandas
 requests
 Flask
+numpy
